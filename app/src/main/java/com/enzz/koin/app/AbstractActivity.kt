@@ -1,7 +1,7 @@
 package com.enzz.koin.app
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.enzz.koin.di.IPresenter
 import org.koin.android.ext.android.inject
 import org.koin.android.scope.ext.android.bindScope

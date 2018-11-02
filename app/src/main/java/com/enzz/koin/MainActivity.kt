@@ -2,10 +2,10 @@ package com.enzz.koin
 
 import android.os.Bundle
 import com.enzz.koin.app.AbstractActivity
-import com.enzz.koin.di.*
-import kotlinx.android.synthetic.main.activity_main.*
+import com.enzz.koin.di.IConfiguration
+import com.enzz.koin.di.IHttpClient
+import com.enzz.koin.di.Service
 import org.koin.android.ext.android.inject
-import org.koin.core.parameter.parametersOf
 
 class MainActivity : AbstractActivity() {
 

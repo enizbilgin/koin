@@ -1,7 +1,7 @@
 package com.enzz.koin.di
 
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 
 
 class Presenter(private val context: AppCompatActivity, val configuration: IConfiguration) : IPresenter {

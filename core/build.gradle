@@ -1,36 +1,38 @@
-apply plugin: 'com.android.application'
-
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion  projectCompileSdkVersion
+
     defaultConfig {
-        applicationId "com.enzz.koin"
         minSdkVersion projectMinSdkVersion
         targetSdkVersion projectTargetSdkVersion
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     implementation "androidx.appcompat:appcompat:$supportVersion"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
-
-    implementation project(':core')
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
+    // koid android
+    api 'org.koin:koin-android:1.0.1'
+    // Scope for Android
+    api 'org.koin:koin-android-scope:1.0.1'
+
 }

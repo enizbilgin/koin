@@ -16,10 +16,7 @@ val appModule = module {
 
 val activityModule = module {
 
-    // Scoped MyScopePresenter instance
-    bean<IPresenter>("AbstractActivity") { (activity: AbstractActivity) -> Presenter(activity, get()) }
-
-    //factory <IPresenter> { (activity: AbstractActivity) -> Presenter(activity, get()) }
+    factory<IPresenter> { (activity: AbstractActivity) -> Presenter(activity, get()) }
 }
 
 val appHttpClientModule = module(override = true) {
