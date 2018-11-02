@@ -1,10 +1,12 @@
-package com.enzz.koin.di
+package com.enzz.core.application.implementations
 
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.enzz.core.application.interfaces.Configuration
+import com.enzz.core.application.interfaces.Presenter
 
 
-class Presenter(private val context: AppCompatActivity, val configuration: IConfiguration) : IPresenter {
+class PresenterImpl(private val context: AppCompatActivity, val configuration: Configuration) : Presenter {
 
     override fun showAlert(): String {
 

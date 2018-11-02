@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion  projectCompileSdkVersion
+    compileSdkVersion projectCompileSdkVersion
 
     defaultConfig {
         minSdkVersion projectMinSdkVersion
@@ -29,8 +30,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    // koid android
+    // koin android
     api 'org.koin:koin-android:1.0.1'
     // Scope for Android
     api 'org.koin:koin-android-scope:1.0.1'

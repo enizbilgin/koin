@@ -1,25 +1,21 @@
 package com.enzz.koin.di
 
-import com.enzz.koin.app.AbstractActivity
+import com.enzz.core.application.interfaces.HttpClient
+import com.enzz.core.presentation.activities.AbstractActivity
+import com.enzz.koin.app.implementation.AppHttpClient
+import com.enzz.koin.app.implementation.FragmentManagementImpl
+import com.enzz.koin.app.interfaces.FragmentManagement
 import org.koin.dsl.module.module
 
-val appModule = module {
 
-    single<IHttpClient> { HttpClient() }
-    single<IConfiguration> { Configuration(get()) }
-    // single<IService> { Service(get(), get(), get()) }
+val appModule = module(override = true) {
 
-    // Will match types ServiceImp & Service
-    single { Service(get(), get(), get()) } bind IService::class
+    single<HttpClient> { AppHttpClient() }
 
 }
 
 val activityModule = module {
 
-    factory<IPresenter> { (activity: AbstractActivity) -> Presenter(activity, get()) }
+    factory<FragmentManagement> { (activity: AbstractActivity) -> FragmentManagementImpl(activity) }
 }
 
-val appHttpClientModule = module(override = true) {
-
-    single<IHttpClient> { AppHttpClient() }
-}

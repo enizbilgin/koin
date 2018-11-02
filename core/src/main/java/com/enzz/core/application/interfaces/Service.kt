@@ -1,6 +1,6 @@
-package com.enzz.koin.di
+package com.enzz.core.application.interfaces
 
-interface IService {
+interface Service {
 
     fun sayHello(): String
 
